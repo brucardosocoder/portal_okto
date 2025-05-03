@@ -3,6 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:url" content="https://brucardosocoder.github.io/portal_okto">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PORTAL OKTO">
+    <meta property="og:description" content="Psicologia e Desenvolvimento Humano">
+    <meta property="og:image" content="https://brucardosocoder.github.io/portal_okto/resources/images/logo-okto.png">   
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="brucardosocoder.github.io">
+    <meta property="twitter:url" content="https://brucardosocoder.github.io/portal_okto">
+    <meta name="twitter:title" content="PORTAL OKTO">
+    <meta name="twitter:description" content="Psicologia e Desenvolvimento Humano">
+    <meta name="twitter:image" content="https://brucardosocoder.github.io/portal_okto/resources/images/logo-okto.png">
     <title>PORTAL OKTO | Psicologia e Desenvolvimento Humano</title>
     <meta name="description" content="Clínica de psicologia no Centro do Rio de Janeiro com atendimento presencial e online">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -125,6 +138,41 @@
             border-left: 4px solid #f5b11e;
             padding-left: 1rem;
             transition: all 0.3s ease;
+        }
+        
+        .modal {
+        display: none;
+        }
+
+        .modal.active {
+        display: flex;
+        }
+
+        /* Trava o scroll da página quando o modal está aberto */
+        body.modal-open {
+        overflow: hidden;
+        }
+
+        .modal-container {
+            max-height: 90vh;
+        }
+
+        .modal-body {
+            scrollbar-width: thin;
+            scrollbar-color: #4b5563 #1f2937; /* Cor da scrollbar (Firefox) */
+        }
+
+        .modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb {
+            background-color: #4b5563;
+            border-radius: 4px;
+        }
+
+        .modal-body::-webkit-scrollbar-track {
+            background-color: #1f2937;
         }
     </style>
 </head>
@@ -1401,12 +1449,39 @@
                         &copy; 2025 Portal Okto. Todos os direitos reservados. Desenvolvido por <a href="https://wa.me/5521989978029" target="_blank" class="underline">Bru Cardoso Coder.</a>
                     </p>
                     <div class="flex space-x-3 md:space-x-6 mb-1 pb-1 md:mb-6">
-                        <a href="#" class="text-sm md:text-base text-gray-400 hover:text-white transition-colors">Política de Privacidade</a>
-                    </div>
+                        <a href="#privacyModal" id="privacyLink" class="text-sm md:text-base text-gray-400 hover:text-white transition-colors">
+                          Política de Privacidade
+                        </a>
+                      </div>
                 </div>
             </div>
         </div>
     </footer>
+
+            <!-- Modal da Política de Privacidade -->
+            <div id="privacyModal" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50">
+            <div class="bg-gray-800 rounded-lg max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+                <div class="p-6">
+                    <!-- Cabeçalho -->
+                    <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold text-white">Política de Privacidade</h3>
+                    <button id="closeModal" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+                    </div>
+                    
+                    <!-- Conteúdo -->
+                    <div class="text-gray-300 text-sm space-y-4">
+                    <h2><span style="color: rgb(255, 255, 255);">Política Privacidade</span></h2><p><span style="color: rgb(255, 255, 255);">A sua privacidade é importante para nós. É política do Portal Okto respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site <a href="https://brucardosocoder.github.io/portal_okto">Portal Okto</a>, e outros sites que possuímos e operamos.</span></p><p><span style="color: rgb(255, 255, 255);">Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado.</span></p><p><span style="color: rgb(255, 255, 255);">Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis ​​para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.</span></p><p><span style="color: rgb(255, 255, 255);">Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.</span></p><p><span style="color: rgb(255, 255, 255);">O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas&nbsp;</span><a href="https://politicaprivacidade.com/" rel="noopener noreferrer" target="_blank" style="background-color: transparent; color: rgb(255, 255, 255);">políticas de privacidade</a><span style="color: rgb(255, 255, 255);">.</span></p><p><span style="color: rgb(255, 255, 255);">Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados.</span></p><p><span style="color: rgb(255, 255, 255);">O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais. Se você tiver alguma dúvida sobre como lidamos com dados do usuário e informações pessoais, entre em contacto connosco.</span></p><p><span style="color: rgb(255, 255, 255);"><ul><li><span style="color: rgb(255, 255, 255);">
+                    </div>
+                    
+                    <!-- Rodapé -->
+                    <div class="mt-6 flex justify-end">
+                    <button id="acceptPrivacy" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">
+                        Aceitar
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/5521982838000" target="_blank" class="fixed bottom-4 right-4 md:bottom-6 right-6 w-12 h-12 md:w-16 md:h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:bg-green-600 transition-colors z-50">
@@ -1567,6 +1642,40 @@
                     link.classList.add('active-section');
                 }
             });
+        });
+        
+        // Elementos do modal
+            // Aguarde o DOM carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            // Elementos
+            const privacyModal = document.getElementById('privacyModal');
+            const privacyLink = document.getElementById('privacyLink'); // ID explícito!
+            const closeModal = document.getElementById('closeModal');
+            const acceptPrivacy = document.getElementById('acceptPrivacy');
+
+            // Abrir modal
+            privacyLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            privacyModal.classList.add('active');
+            document.body.classList.add('modal-open'); // Trava o scroll
+            });
+
+            // Fechar modal (3 formas)
+            const closeModalFunc = () => {
+            privacyModal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+            };
+
+            closeModal.addEventListener('click', closeModalFunc);
+            acceptPrivacy.addEventListener('click', closeModalFunc);
+            
+            // Fechar ao clicar fora
+            privacyModal.addEventListener('click', (e) => {
+            if (e.target === privacyModal) closeModalFunc();
+            });
+            if (!localStorage.getItem('privacyAccepted')) {
+                privacyModal.classList.add('active');
+            }
         });
     </script>
 </body>
